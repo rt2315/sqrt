@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <style>
+        *{background-color:rgb(7, 252, 39); font-size: 40px;}
+        h1{background-color: rgb(240, 131, 207); width:50%; border-radius: 30px;}
+        
+    </style>
+
+<script>
+    function find() 
+    {
+        event.preventDefault();
+        let num= document.getElementById("num");
+        let ans = document.getElementById("ans");
+        if 
+        (num.value=="")
+        {
+            alert("Number is Empty");
+            ans.innerHTML="";
+            num.focus();
+            return;;
+        }
+        let n=parseFloat(num.value);
+        if (n<0.0)
+        {
+            alert("-ve Number is not allowed")
+            ans.innerHTML="";
+            num.focus();
+            num.value="";
+            return;
+        }
+            let r=Math.sqrt(n);
+        let msg="sqrt="+r.toFixed(2);
+       
+        
+        ans.innerHTML=msg;
+    }
+</script>
+</head>
+<body>
+    <center>
+    <h1>Square Root Finder</h1>
+    <form onsubmit="find()">
+   
+    <input type="number" step="any" placeholder="Enter a Number" id="num"/>    
+    <br><br>
+    <input type="Submit" value="Find">    
+</form>
+<h2 id="ans"></h2>
+</center>
+</body>
+</html>
